@@ -16,3 +16,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "tex", "plaintex", "markdown", "text" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+  end,
+})
