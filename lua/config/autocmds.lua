@@ -24,5 +24,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.linebreak = true
     vim.opt_local.breakindent = true
     vim.opt_local.showbreak = "↪ "
+
+    -- spell settings (edit languages as you prefer)
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "en_gb", "nb" } -- e.g. Oxford English + Norwegian Bokmål
+    vim.opt_local.spellsuggest = "best,9"
+
+    -- optional: per-project custom words file (create it when prompted by `zg`)
+    vim.opt_local.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
   end,
 })
